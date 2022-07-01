@@ -56,42 +56,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script>
-
-
-var wo=0;
-
-$(function() {
-$(window).scroll(function() {
-  var scroll = $(this).scrollTop();
-  console.log(scroll);
-var ws=0;
-
-if(scroll&gt;200){
-ws=1;
-}
-else {
-ws=0;
-}
-
-if(ws==wo){
-}
-else {
-if(ws==1){
-  $("#head_img").animate({width:"32px"},600,"easeInOutExpo");
-  console.log("IN");
-}
-else {
-  $("#head_img").animate({width:"64px"},200,"easeInOutExpo");
-  console.log("OUT");
-}
-wo=ws;
-}
-
- });
-});
-</script>
-
 <framexs:if property="pagetype" value="article">
 <link rel="stylesheet" href="css/article.css"/>
 <script src="js/article.js"></script>
