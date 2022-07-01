@@ -15,6 +15,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <license>MIT License</license>
 <summary>テーマをどう作ればいいかの参照として開発されたテーマ</summary>
 <description></description>
+<repository>https://github.com/inomoto-hironobu/yaohata.git</repository>
 </infomation>
 <head>
 <framexs:if property="google-tag-manager-code">
