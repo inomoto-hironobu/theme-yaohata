@@ -141,7 +141,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </script>
 </div>
 </framexs:if>
-<framexs:resource name="aside"/>
+<framexs:resource name="sidebar"/>
 </aside>
 </framexs:if>
 <main style="width:100%" framexs:element="">
