@@ -475,33 +475,9 @@ font-weight: bold;
   box-shadow: 2px 2px 2px #636363;
 }
 
-
-/*### 3/2変更分 #################*/
-
-/*33.広告の位置を変える*/
-.adv{
-  position: absolute;
-  left:10500px;
-}
-
 /*35.リンクの見た目の調整*/
 .responsive td{
   min-width:200px;
-}
-
-/*32.ページトップの修正*/
-/*位置移動、リンク下線が出ないように変更*/
-.col{
-  background-color: #F1F1F1;
-  border-radius: 80px;
-  border: solid 1px #111;
-  position: fixed;
-top:80%;
-/*レスポンシブ対応*/
-left:calc(98% - 53px);
-width:53px;
-z-index: 4;
-height:40px;
 }
 
 .col a{
