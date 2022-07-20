@@ -161,18 +161,8 @@ bg-light
 </header>
 <article>
 <p>更新日:<framexs:meta name="modified"/> <span id="github-history"></span> <span id="content-length"></span></p>
-<framexs:if id="prelude">
-<section id="prelude"></section>
-</framexs:if>
 <h1 class="title"><framexs:title/></h1>
-<framexs:id name="premain"/>
-<section class="main">
 <framexs:id name="main"/>
-</section>
-<framexs:id name="postmain"/>
-<framexs:if id="coda">
-<section id="coda"><framexs:id name="coda"/></section>
-</framexs:if>
 </article>
 </main>
 </div>
