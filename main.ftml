@@ -72,12 +72,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 <framexs:if property="google-ads-code">
-<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" framexs:element="">
-<framexs:attribute name="data-ad-client"><framexs:property name="google-ads-code"/></framexs:attribute>
+<script async="" crossorigin="anonymous" framexs:element="">
+<framexs:attribute>https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<framexs:property name="google-ads-code"/></framexs:attribute>
 </script>
 </framexs:if>
 <framexs:script/>
-<script async="" defer="" src="..//survey.g.doubleclick.net/async_survey?site=u7mehjhrqvosros3my3mxijaa4"></script>
 </head>
 <body class="bg-dark">
 <framexs:if property="google-tag-manager-code">
