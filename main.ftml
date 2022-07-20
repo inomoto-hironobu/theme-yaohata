@@ -170,11 +170,6 @@ bg-light
 <section class="main">
 <framexs:id name="main"/>
 </section>
-<framexs:if property="pagetype" value="index">
-<div id="indexes">
-<framexs:id name="indexes"/>
-</div>
-</framexs:if>
 <framexs:id name="postmain"/>
 <framexs:if id="coda">
 <section id="coda"><framexs:id name="coda"/></section>
