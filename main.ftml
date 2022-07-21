@@ -10,7 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <infomation xmlns="urn:framexs">
 <name>八百幡</name>
-<version>0.1.1</version>
+<version>0.1.2</version>
 <author>井本拓伸</author>
 <license>MIT License</license>
 <summary>テーマをどう作ればいいかの参照として開発されたテーマ</summary>
@@ -77,6 +77,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </script>
 </framexs:if>
 <framexs:script/>
+<framexs:property name="script"/>
 </head>
 <body class="bg-dark">
 <framexs:if property="google-tag-manager-code">
@@ -99,7 +100,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/index.xhtml">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" framexs:element="">
+         <framexs:attribute name="href"><framexs:property name="home-url"/></framexs:attribute>
+         <framexs:text>Home </framexs:text>
+         <span class="sr-only">(current)</span>
+        </a>
       </li>
       <framexs:list ref-property="nav">
         <li class="nav-item">
@@ -156,11 +161,9 @@ bg-light
 </ol>
 </nav>
 </framexs:if>
-<header>
-<p><span id="github-history"></span> <span id="content-length"></span></p>
-</header>
+<framexs:property name="main-header"/>
 <article>
-<p>更新日:<framexs:meta name="modified"/> <span id="github-history"></span> <span id="content-length"></span></p>
+<p>更新日:<framexs:meta name="modified"/> <span id="content-length"></span></p>
 <h1 class="title"><framexs:title/></h1>
 <framexs:id name="main"/>
 </article>
