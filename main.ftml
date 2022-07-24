@@ -73,7 +73,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <framexs:if property="google-ads-code">
 <script async="" crossorigin="anonymous" framexs:element="">
-<framexs:attribute>https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<framexs:property name="google-ads-code"/></framexs:attribute>
+<framexs:attribute name="src">https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<framexs:property name="google-ads-code"/></framexs:attribute>
 </script>
 </framexs:if>
 <framexs:script/>
