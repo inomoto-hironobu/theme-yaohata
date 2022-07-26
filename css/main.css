@@ -569,7 +569,7 @@ table.responsive {
 
 .bg-info {
   /*フッダーの色を黒に*/
-  background-color:#333;
+  background-color:#333 !important;
   /*狭かったスペースを空ける*/
   padding:20px 50px 50px;
 }
