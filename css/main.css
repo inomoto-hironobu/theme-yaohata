@@ -163,7 +163,7 @@ table.responsive td, table.responsive th {
 	
 }
 
-
+/*背景色の調整*/
 .bg-dark {
     background-color: #cfcfcf !important;
 }
