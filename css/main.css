@@ -168,6 +168,7 @@ table.responsive td, table.responsive th {
     background-color: #cfcfcf !important;
 }
 
+
 /*表示がおかしくなっていたので修正*/
 @media screen and (min-width:767px) {
 /*PC表示の時ワイドを1000PXで固定*/
