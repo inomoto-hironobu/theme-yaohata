@@ -131,12 +131,14 @@ col
 </framexs:if>
 </aside>
 <div class="row">
+
 <framexs:if property="sidebar" value="display">
 <aside id="side-infomation" framexs:element="">
 <framexs:attribute name="class">
 col-md-4
 <framexs:property name="sidebar-class"/>
 </framexs:attribute>
+
 <framexs:if property="ninja-ad-side">
 <div class="d-none d-md-block adv" style="width:210px">
 <script framexs:element="">
@@ -144,17 +146,17 @@ col-md-4
 </script>
 </div>
 </framexs:if>
+
 <framexs:resource name="sidebar"/>
+
 </aside>
 </framexs:if>
+
 <main style="width:100%" framexs:element="">
 <framexs:attribute name="class">
-<framexs:switch property="sidebar">
-<framexs:case value="display">col-md-8</framexs:case>
-<framexs:case value="">col-md-12</framexs:case>
-</framexs:switch>
-bg-white
+<framexs:property name="main-class"/>
 </framexs:attribute>
+
 <framexs:if id="breadcrumb">
 <nav aria-label="breadcrumb">
 <ol class="breadcrumb">
@@ -163,11 +165,13 @@ bg-white
 </ol>
 </nav>
 </framexs:if>
+
 <framexs:property name="header-in-main"/>
 <h1 class="title"><framexs:title/></h1>
 <framexs:id name="main"/>
 </main>
 </div>
+
 <aside id="" class="row">
 <framexs:if property="ninja-ad-body">
 <div class="col bg-black">
@@ -181,12 +185,13 @@ bg-white
 </div>
 </framexs:if>
 </aside>
+
 <aside class="row bg-white">
-<div class="col" style="font-size:1.5rem;text-align:center"><a href="#top">△page top</a></div>
+<div class="col" style="font-size:1.5rem;text-align:center"><a href="#top">▲</a></div>
 </aside>
 </div>
 <!-- /container -->
-<footer framexs:element="">
+<footer id="footer_links" framexs:element="">
 <framexs:attribute name="class">
 <framexs:property name="footer-class"/>
 </framexs:attribute>
