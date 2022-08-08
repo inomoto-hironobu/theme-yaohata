@@ -182,6 +182,12 @@ margin-right:8px;
 	margin-left: -2.7rem;
 	padding-left: 13px;
 }
+.footer-content {
+	margin: 0 40px;
+}
+.footer-content * {
+	color: white;
+}
 @media screen and (max-width:767px) {
 
 	/*タイトルの調整*/
