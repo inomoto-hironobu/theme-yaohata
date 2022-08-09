@@ -10,7 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <infomation xmlns="urn:framexs">
 <name>八百幡</name>
-<version>0.1.2</version>
+<version>0.2.0</version>
 <author>井本拓伸</author>
 <license>MIT License</license>
 <summary>テーマをどう作ればいいかの参照として開発されたテーマ</summary>
@@ -81,9 +81,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <!-- End Google Tag Manager (noscript) -->
 </framexs:if>
 <header id="pagetop">
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand"><img id="head_img" src="/img/logo.png" width="64"/></a>
-  <a class="navbar-brand" href="https://inomoto-hironobu.github.io/index.xhtml"><framexs:property name="site-name"/></a>
+<nav id="navbar" framexs:element="">
+  <framexs:attribute name="class">navbar navbar-expand-lg navbar-light <framexs:property name="nav-class"/></framexs:attribute>
+  <a class="navbar-brand"><framexs:property name="logo"/></a>
+  <a class="navbar-brand">
+  <framexs:attribute name="href"><framexs:property name="home-url"/></framexs:attribute>
+  <framexs:property name="site-name"/></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -92,7 +95,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" framexs:element="">
-         <framexs:attribute name="href"><framexs:property name="home-url"/></framexs:attribute>
+         <framexs:attribute name="href"><framexs:property name="home-path"/></framexs:attribute>
          <framexs:text>Home </framexs:text>
          <span class="sr-only">(current)</span>
         </a>
@@ -113,8 +116,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div id="top" style="margin-top: -64px; padding-bottom: 64px;"></div>
 
 <div class="container" style="max-width:880px">
-<aside class="row">
+<!--忍者AdMaxを定義しているなら広告を表示する-->
 <framexs:if property="ninja-ad-body">
+<aside class="row">
 <div framexs:element="">
 <framexs:attribute name="class">
 col
@@ -128,19 +132,20 @@ col
 </div>
 </div>
 </div>
-</framexs:if>
 </aside>
+</framexs:if>
+
 <div class="row">
 
 <framexs:if property="sidebar" value="display">
 <aside id="side-infomation" framexs:element="">
 <framexs:attribute name="class">
-col-md-4
+col-md-4 d-none d-md-block
 <framexs:property name="sidebar-class"/>
 </framexs:attribute>
 
 <framexs:if property="ninja-ad-side">
-<div class="d-none d-md-block adv" style="width:210px">
+<div class="adv" style="width:210px">
 <script framexs:element="">
 <framexs:attribute name="src">https://adm.shinobi.jp/s/<framexs:property name="ninja-ad-side"/></framexs:attribute>
 </script>
@@ -172,8 +177,9 @@ col-md-4
 </main>
 </div>
 
-<aside id="" class="row">
+<!--忍者AdMaxを定義しているなら広告を表示する-->
 <framexs:if property="ninja-ad-body">
+<aside class="row">
 <div class="col bg-black">
 <div class="adv">
 <div style="max-width:728px">
@@ -183,35 +189,42 @@ col-md-4
 </div>
 </div>
 </div>
+</aside>
 </framexs:if>
-</aside>
 
-<aside class="row bg-white">
-<div class="col" style="font-size:1.5rem;text-align:center"><a href="#top">▲</a></div>
-</aside>
+<footer class="row">
+<div class="col">
+<div style="font-size:1.5rem;text-align:center" framexs:element="">
+<framexs:attribute name="class"><framexs:property name="footer-class-in-main"/></framexs:attribute>
+<a href="#top">▲</a></div>
+</div>
+</footer>
 </div>
 <!-- /container -->
-<footer id="footer_links" framexs:element="">
+<footer id="footer" framexs:element="">
 <framexs:attribute name="class">
 <framexs:property name="footer-class"/>
 </framexs:attribute>
 
 <framexs:property name="footer"/>
 
-<p style="text-align:center"><framexs:property name="copyright"/></p>
+<div style="text-align:center"><framexs:property name="copyright"/></div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- 静的サイト用の自動リンクカード生成のためのテンプレート -->
 <template id="link-template">
 <div class="card" style="max-width:32rem;margin:1rem auto;">
 <div class="card-body">
 <h5 class="card-title">Card title</h5>
-<h5 class="card-subtitle"></h5>
+<h6 class="card-subtitle mb-2 text-muted"></h6>
 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 <a href="#" class="btn btn-primary">ページを見る</a>
 </div>
 </div>
 </template>
+
 </body>
 </html>
