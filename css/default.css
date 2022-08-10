@@ -98,14 +98,65 @@ table.vertical tfoot {
 kbd{
     background-color: #7394b7;
 }
-/*38.謎のスクロールバーを消す*/
-.main .code-container {
-	background-color: #f8f9fa;
-	  overflow-x: hidden;
-  }
-  
-  /*37.コード部分が見づらい*/
-  .main .caption{
-	/*タイトル部分の間隔を広げる*/
-	line-height: 40px; 
+
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+:root {
+	--breakpoint-width: 748px;
+}
+
+img.right {
+	float:right;
+}
+img.left {
+	float:left;
+	margin-right:1rem;
+}
+article img {
+	width:50%;
+	shape-outside: margin-box;
+}
+@media screen and (max-width:748px) {
+	article img {
+		width:100%;
+	}
+}
+main h1,.main h2,.main h3,.main h4,.main h5,.main h6 {
+    font-weight: bold;
+    margin-top: 0%;
+    margin-left: 1rem;
+    text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff, 2px 0px 2px #fff, 0px 2px 2px #fff, -2px 0px 2px #fff, 0px -2px 2px #fff;
+    line-height: 120%;
+}
+/*23.見出しを無彩色にし、装飾を追加*/
+
+main h2 {
+/*H2の変更　H1と入れ替え+調整*/
+color:black;
+border-left: solid 5px gray;
+padding-left: 10px;
+}
+h1 {
+margin:4% 1%;
+}
+
+h2 {
+margin:1% 1% 2%;
+}
+
+
+main section {
+margin:4% 1% 0%;
+}
+/*47.文字間隔の調整*/
+article section p {
+	/*本文の幅を広げる*/
+	line-height: 1.5;
+	margin: 40px 0;
+	/*文字ボックスの色を調整*/
+	margin-left:0px;
+	padding:1.25rem;
+	border-top: solid 1px #121212;
+	border-left: solid 1px #121212;
+	border-right: solid 2px #727272;
+	border-bottom: solid 2px #727272;
   }

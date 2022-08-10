@@ -21,13 +21,7 @@ body {
 	padding-bottom: 8px;
 }
 
-main h1,.main h2,.main h3,.main h4,.main h5,.main h6 {
-    font-weight: bold;
-    margin-top: 0%;
-    margin-left: 1rem;
-    text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff, 2px 0px 2px #fff, 0px 2px 2px #fff, -2px 0px 2px #fff, 0px -2px 2px #fff;
-    line-height: 120%;
-}
+
 
 #prelude {
 	padding: .5rem .5rem 0 .5rem;
@@ -66,8 +60,8 @@ figure > * {
 	margin: 0;
 }
 table.responsive {
-	 border-collapse: collapse;
-	 border:1px solid #333;
+	border-collapse: collapse;
+	border:1px solid #333;
 }
 table.responsive td, table.responsive th {
 	border-collapse: collapse;
@@ -111,7 +105,7 @@ body > footer {
 
 /*
 想定するコード
-<div class="">
+<div class="code-container">
 <div class="caption">---</div>
 <pre><code>
 ---
@@ -159,15 +153,12 @@ margin-right:8px;
 	.code-container code {
 		margin: 0;
 	}
-}
-
-/*表示がおかしくなっていたので修正*/
-@media screen and (min-width:767px) {
-/*PC表示の時ワイドを1000PXで固定*/
-.container{
-	max-width:1000px;
-	width:1000px;
-}
+	/*表示がおかしくなっていたので修正*/
+	/*PC表示の時ワイドを1000PXで固定*/
+	.container{
+		max-width:1000px;
+		width:1000px;
+	}
 }
 
 /*31.ヘッダーが半透明になってる*/
@@ -196,11 +187,11 @@ margin-right:8px;
 }
 
 .tips {
-  list-style: none;
-  font-size:80%;
-    font-weight: 900;
-    color: #633;
-margin-left:-54px;
+	list-style: none;
+	font-size:80%;
+	font-weight: 900;
+	color: #633;
+	margin-left:-54px;
 }
 .tips:before {
   list-style: none;
@@ -358,27 +349,6 @@ ul ul {
     padding-bottom: 0;
 }
 
-
-
-
-/*### 3/7変更分 #################*/
-
-
-
-/*47.文字間隔の調整*/
-article section p {
-  /*本文の幅を広げる*/
-  line-height: 1.5;
-  margin: 40px 0;
-  /*文字ボックスの色を調整*/
-  margin-left:0px;
-  padding:1.25rem;
-  border-top: solid 1px #121212;
-  border-left: solid 1px #121212;
-  border-right: solid 2px #727272;
-  border-bottom: solid 2px #727272;
-}
-
 .dropdown-item{
   /*メニューの幅にも対応*/
   line-height: 1.5;
@@ -423,48 +393,21 @@ main {
   margin-bottom: 50px;
 }
 
-
-/*23.見出しを無彩色にし、装飾を追加*/
-
-main h2 {
-  /*H2の変更　H1と入れ替え+調整*/
-  color:black;
-    border-left: solid 5px gray;
-    padding-left: 10px;
-}
-
-
-
-/*### 2/16変更分 #################*/
-
-
-
 #pagetop{
   z-index: 1;
-    postion: -webkit-sticky;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     }
 
-#coda {
+.info {
 margin-top:5px;
 }
-#coda p {
+.info p {
 padding:5px 15px;
 }
 
-h1 {
-margin:4% 1%;
-}
 
-h2 {
-margin:1% 1% 2%;
-}
-
-
-main section {
-margin:4% 1% 0%;
-}
 
 .info h1,.info h2,.info h3,.info h4,.info h5,.info h6 {
     color: #FFF;
@@ -501,8 +444,6 @@ margin:4% 1% 0%;
 font-size: 130%;
 line-height: 55px;
 }
-
-
 
 /*外部リンクの見た目を調整*/
 .info ul {
