@@ -153,12 +153,6 @@ margin-right:8px;
 	.code-container code {
 		margin: 0;
 	}
-	/*表示がおかしくなっていたので修正*/
-	/*PC表示の時ワイドを1000PXで固定*/
-	.container{
-		max-width:1000px;
-		width:1000px;
-	}
 }
 
 /*31.ヘッダーが半透明になってる*/
@@ -342,7 +336,7 @@ margin-bottom:0.5em;
     margin-left: -32px;
 }
 
-ul ul {
+main ul ul {
     margin-bottom: 0px;
     border: dotted #1e366a 0px;
     padding-top: 0;
