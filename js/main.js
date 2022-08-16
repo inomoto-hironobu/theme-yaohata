@@ -43,8 +43,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	.querySelectorAll('*[data-url]')
 	.forEach((link)=>{
 		const url = link.dataset.url;
-		let card = document.getElementById('link-template').content.cloneNode(true);
+		let card = document.getElementById('link-template').querySelector('.card').cloneNode(true);
+		console.log(card);
 		pullMeta(url,function(info){
+			
 			card.querySelector('.card-title').textContent=info.title;
 			card.querySelector('.card-text').textContent=info.description;
 			card.querySelector('.card-subtitle').textContent=info.modified+' 更新/'+info.contentLength+' 文字';

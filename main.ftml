@@ -73,7 +73,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <framexs:script/>
 <framexs:property name="footer-in-head"/>
 </head>
-<body class="bg-dark" framexs:element="">
+<body framexs:element="">
 <framexs:attribute name="class">
 <framexs:property name="body-class"/>
 </framexs:attribute>
@@ -92,7 +92,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <a class="navbar-brand"><framexs:property name="logo"/></a>
   <a class="navbar-brand" framexs:element="">
   <framexs:attribute name="href"><framexs:property name="home-url"/></framexs:attribute>
-  <framexs:property name="site-name"/></a>
+  <framexs:property name="site-name"/>
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -121,52 +122,41 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <div id="top" style="margin-top: -64px; padding-bottom: 64px;"></div>
 
-<div class="container" style="max-width:880px">
-<!--忍者AdMaxを定義しているなら広告を表示する-->
-<framexs:if property="ninja-ad-body">
-<aside class="row">
+<div class="container">
+<framexs:if property="">
+<header class="row">
 <div framexs:element="">
 <framexs:attribute name="class">
 col
-<framexs:property name="sidebar-class"/>
+<framexs:property name="header-in-container-class"/>
 </framexs:attribute>
-<div class="adv">
-<div style="max-width:728px">
-<script framexs:element="">
-<framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute>
-</script>
+<framexs:property name="header-in-container"/>
 </div>
-</div>
-</div>
-</aside>
+</header>
 </framexs:if>
 
 <div class="row">
-
-<framexs:if property="sidebar" value="display">
-<aside id="side-infomation" framexs:element="">
+<!--PC用サイドバー1-->
+<framexs:if property="sidebar1" value="display">
+<aside id="sidebar1-wide" framexs:element="">
 <framexs:attribute name="class">
-col-md-4 d-none d-md-block
-<framexs:property name="sidebar-class"/>
+d-none d-md-block
+<framexs:property name="sidebar1-wide-class"/>
 </framexs:attribute>
-
-<framexs:if property="ninja-ad-side">
-<div class="adv" style="width:210px">
-<script framexs:element="">
-<framexs:attribute name="src">https://adm.shinobi.jp/s/<framexs:property name="ninja-ad-side"/></framexs:attribute>
-</script>
-</div>
-</framexs:if>
-
-<framexs:resource name="sidebar"/>
-
+<framexs:resource name="sidebar1-wide"/>
 </aside>
 </framexs:if>
 
-<main style="width:100%" framexs:element="">
+<!--モバイル用サイドバー1-->
+<framexs:if property="sidebar1" value="display">
+<aside id="sidebar1-mobile" framexs:element="">
 <framexs:attribute name="class">
-<framexs:property name="main-class"/>
+col d-md-none d-block
+<framexs:property name="sidebar1-mobile-class"/>
 </framexs:attribute>
+<framexs:resource name="sidebar1-mobile"/>
+</aside>
+</framexs:if>
 
 <framexs:if id="breadcrumb">
 <nav aria-label="breadcrumb">
@@ -177,34 +167,57 @@ col-md-4 d-none d-md-block
 </nav>
 </framexs:if>
 
+<div framexs:element="">
+<framexs:attribute name="class">
+center
+<framexs:property name="center-class">
+col
+</framexs:property>
+</framexs:attribute>
+<framexs:property name="header-in-center"/>
+<main style="width:100%" framexs:element="">
+<framexs:attribute name="class">
+<framexs:property name="main-class"/>
+</framexs:attribute>
 <framexs:property name="header-in-main"/>
 <h1 class="title"><framexs:title/></h1>
 <framexs:id name="main"/>
+<framexs:property name="footer-in-main"/>
 </main>
+<framexs:property name="footer-in-center"/>
 </div>
 
-<!--忍者AdMaxを定義しているなら広告を表示する-->
-<framexs:if property="ninja-ad-body">
-<aside class="row">
-<div class="col bg-black">
-<div class="adv">
-<div style="max-width:728px">
-<script framexs:element="">
-<framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute>
-</script>
-</div>
-</div>
-</div>
+<!--PC用サイドバー2-->
+<framexs:if property="sidebar2" value="display">
+<aside id="sidebar2-wide" framexs:element="">
+<framexs:attribute name="class">
+d-none d-md-block
+<framexs:property name="sidebar2-wide-class"/>
+</framexs:attribute>
+<framexs:resource name="sidebar2-wide"/>
 </aside>
 </framexs:if>
 
+<!--モバイル用サイドバー2-->
+<framexs:if property="sidebar2" value="display">
+<aside id="sidebar2-mobile" framexs:element="">
+<framexs:attribute name="class">
+col d-md-none d-block
+<framexs:property name="sidebar2-mobile-class"/>
+</framexs:attribute>
+<framexs:resource name="sidebar2-mobile"/>
+</aside>
+</framexs:if>
+</div>
+<!-- /row -->
+
 <footer class="row">
-<div class="col">
-<div style="font-size:1.5rem;text-align:center" framexs:element="">
-<framexs:attribute name="class"><framexs:property name="footer-class-in-main"/></framexs:attribute>
-<a href="#top">▲</a></div>
+<div class="col" framexs:element="">
+<framexs:attribute name="class">col <framexs:property name="footer-class-in-container"/></framexs:attribute>
+<framexs:property name="footer-in-container"/>
 </div>
 </footer>
+
 </div>
 <!-- /container -->
 <footer id="footer" framexs:element="">
@@ -221,7 +234,7 @@ col-md-4 d-none d-md-block
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <!-- 静的サイト用の自動リンクカード生成のためのテンプレート -->
-<template id="link-template">
+<div style="display:none" id="link-template">
 <div class="card" style="max-width:32rem;margin:1rem auto;">
 <div class="card-body">
 <h5 class="card-title">Card title</h5>
@@ -230,7 +243,7 @@ col-md-4 d-none d-md-block
 <a href="#" class="btn btn-primary">ページを見る</a>
 </div>
 </div>
-</template>
-
+</div>
+<framexs:property name="footer-in-body"/>
 </body>
 </html>

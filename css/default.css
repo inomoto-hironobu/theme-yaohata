@@ -160,3 +160,27 @@ article section p {
 	border-right: solid 2px #727272;
 	border-bottom: solid 2px #727272;
   }
+
+  /*26.二重になっている線を1つに戻す*/
+main section {
+	padding-bottom:30px;
+	border-top: solid 0px gray;
+	border-bottom: solid 1px gray;
+	border-radius:1px;
+}
+
+/*フッダー上の二重線部分を消す*/
+main section:last-child {
+	border-bottom: solid 0px gray;
+}
+
+
+/*メニューの緑が見づらい*/
+
+main h3 {
+	/*H2の変更　H1と入れ替え+調整*/
+	color:black;
+	border-bottom: solid 3px gray;
+	padding-left: 5px;
+	padding-bottom:10px;
+}

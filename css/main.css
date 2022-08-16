@@ -192,21 +192,16 @@ margin-right:8px;
     content: "※　";
 }
 
-ul.contact {
+article a.contact {
 	background: RGBA(255,255,255,0.02);
     margin: 1rem auto;
     text-align: center;
     width: 100%;
     padding: 10px 0;
-}
-.contact a {
 	color: #396;
 	display:block;
 	padding: 10px 0;
-}
-.contact > li {
-	list-style: none;
-    margin: 1rem 10%;
+	margin: 1rem 10%;
     width: 80%;
     background: linear-gradient(#efe, #beb);
     color: #396;
@@ -358,34 +353,7 @@ main ul ul {
   color:#111;
 }
 
-/*26.二重になっている線を1つに戻す*/
-main section {
- padding-bottom:30px;
-    border-top: solid 0px gray;
-    border-bottom: solid 1px gray;
-     border-radius:1px;
-}
 
-/*フッダー上の二重線部分を消す*/
-main section:last-child {
-   border-bottom: solid 0px gray;
-}
-
-
-/*メニューの緑が見づらい*/
-
-main h3 {
-  /*H2の変更　H1と入れ替え+調整*/
-  color:black;
-    border-bottom: solid 3px gray;
-    padding-left: 5px;
-    padding-bottom:10px;
-}
-
-main {
-  /*メイン部分のスペース調整*/
-  margin-bottom: 50px;
-}
 
 #pagetop{
   z-index: 1;

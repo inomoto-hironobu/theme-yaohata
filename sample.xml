@@ -1,12 +1,43 @@
 <?xml version="1.0"?>
 <framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+<!-- サイト名-->
 <framexs:property name="site-name"></framexs:property>
-<framexs:property name="google-tag-manager-code"></framexs:property>
-<framexs:property name="nav">
-<li></li>
+<!-- フッターのコピーライト-->
+<framexs:property name="copyright"></framexs:property>
+<framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
+<!-- サイトのトップページのURL-->
+<framexs:property name="home-url"></framexs:property>
+<framexs:property name="logo">
+<img id="head_img" src="/img/logo.png" width="64"/>
 </framexs:property>
-<!-- index、article、lpの3種類が指定できる-->
-<framexs:property name="pagetype"></framexs:property>
-<!-- displayを設定するとサイドバーを表示する-->
-<framexs:property name="sidebar"></framexs:property>
+<framexs:property name="body-class">bg-light</framexs:property>
+<framexs:property name="nav-class"></framexs:property>
+<framexs:property name="main-class">col-md-8 bg-white</framexs:property>
+<framexs:property name="sidebar-class">bg-white</framexs:property>
+<framexs:property name="footer-class">bg-dark text-white</framexs:property>
+<framexs:property name="home-path">/index.xhtml</framexs:property>
+<framexs:property name="use-default-css">yes</framexs:property>
+<!-- サイトのトップページのURL-->
+<framexs:property name="nav">
+<li title=""></li>
+</framexs:property>
+<framexs:property name="footer-in-head">
+<script src="/js/gh.js"></script>
+<link rel="stylesheet" href="/css/style.css"/>
+</framexs:property>
+<framexs:property name="header-in-main">
+<header>
+<p><span id="github-history"></span> <span id="content-length"></span></p>
+<p>更新日:<span id="modified"></span> <span id="content-length"></span></p>
+</header>
+</framexs:property>
+<framexs:property name="footer-in-container">
+<div style="font-size:1.5rem;text-align:center"><a href="#top">▲</a></div>
+</framexs:property>
+<framexs:property name="footer">
+<ul class="footer-links">
+<li><a class="contact" href="https://groups.google.com/g/framexs">メーリングリスト</a></li>
+<li><a class="contact" href="https://mail.google.com/chat/u/0/#chat/space/AAAAGMdSb88">チャットスペース</a></li>
+</ul>
+</framexs:property>
 </framexs:properties>
