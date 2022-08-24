@@ -192,7 +192,7 @@ margin-right:8px;
     content: "※　";
 }
 
-article contact-button {
+article .contact-button {
 	background: RGBA(255,255,255,0.02);
     margin: 1rem auto;
     text-align: center;
@@ -347,13 +347,6 @@ main ul ul {
 #footer-links{
   box-shadow: 2px 2px 2px #636363;
 }
-
-/*30.ヘッダーの文字が薄い*/
-.navbar-light .navbar-nav .nav-link{
-  color:#111;
-}
-
-
 
 #pagetop{
   z-index: 1;

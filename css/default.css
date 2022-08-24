@@ -184,3 +184,8 @@ main h3 {
 	padding-left: 5px;
 	padding-bottom:10px;
 }
+/*30.ヘッダーの文字が薄い*/
+.navbar-nav li a.nav-link{
+	color:#111;
+  }
+  

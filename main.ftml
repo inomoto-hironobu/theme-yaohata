@@ -88,7 +88,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </framexs:if>
 <header id="pagetop">
 <nav id="navbar" framexs:element="">
-  <framexs:attribute name="class">navbar navbar-expand-lg navbar-light <framexs:property name="nav-class"/></framexs:attribute>
+  <framexs:attribute name="class">navbar navbar-expand-lg <framexs:property name="nav-class"/></framexs:attribute>
   <a class="navbar-brand"><framexs:property name="logo"/></a>
   <a class="navbar-brand" framexs:element="">
   <framexs:attribute name="href"><framexs:property name="home-url"/></framexs:attribute>
@@ -136,6 +136,7 @@ col
 </framexs:if>
 
 <div class="row">
+
 <!--PC用サイドバー1-->
 <framexs:if property="sidebar1" value="display">
 <aside id="sidebar1-wide" framexs:element="">
