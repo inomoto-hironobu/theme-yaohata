@@ -40,18 +40,23 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	});
 	
 	document
-	.querySelectorAll('*[data-url]')
+	.querySelectorAll('*[data-internal-path]')
 	.forEach((link)=>{
-		const url = link.dataset.url;
+		let loading = document.getElementById('loading-template').querySelector('.spinner-border').cloneNode(true);
+		link.replaceWith(loading);
+		const internal_path = link.dataset.internalPath;
 		let card = document.getElementById('link-template').querySelector('.card').cloneNode(true);
-		console.log(card);
-		pullMeta(url,function(info){
+		console.log(internal_path);
+		pullMeta(internal_path,function(info){
 			
 			card.querySelector('.card-title').textContent=info.title;
 			card.querySelector('.card-text').textContent=info.description;
 			card.querySelector('.card-subtitle').textContent=info.modified+' 更新/'+info.contentLength+' 文字';
-			card.querySelector('a').setAttribute('href',url);
-			link.replaceWith(card);
+			card.querySelector('a').setAttribute('href',internal_path);
+			loading.replaceWith(card);
+		},function(error){
+			let loaderror = document.getElementById('loaderror-template').firstElementChild;
+			loading.replaceWith(loaderror);
 		});
 	});
 	
