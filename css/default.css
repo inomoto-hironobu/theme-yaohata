@@ -187,5 +187,11 @@ main h3 {
 /*30.ヘッダーの文字が薄い*/
 .navbar-nav li a.nav-link{
 	color:#111;
-  }
-  
+}
+
+main {
+	padding-top:20px;
+}
+#sidebar1-wide {
+	padding-top:20px;
+}
