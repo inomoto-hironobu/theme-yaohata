@@ -123,7 +123,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div id="top" style="height:90px;z-index:-1;position:absolute"></div>
 
 <div class="container">
-<framexs:if property="">
+<framexs:if property="header-in-container" value="yes">
 <header class="row">
 <div framexs:element="">
 <framexs:attribute name="class">
@@ -159,14 +159,7 @@ col d-md-none d-block
 </aside>
 </framexs:if>
 
-<framexs:if id="breadcrumb">
-<nav aria-label="breadcrumb">
-<ol class="breadcrumb">
-<li framexs:id-d="breadcrumb"></li>
-<li class="breadcrumb-item active" aria-current="page"><framexs:title/></li>
-</ol>
-</nav>
-</framexs:if>
+
 
 <div framexs:element="">
 <framexs:attribute name="class">
@@ -175,6 +168,14 @@ center
 col
 </framexs:property>
 </framexs:attribute>
+<framexs:if id="breadcrumb">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li framexs:id-d="breadcrumb"></li>
+<li class="breadcrumb-item active" aria-current="page"><framexs:title/></li>
+</ol>
+</nav>
+</framexs:if>
 <framexs:property name="header-in-center"/>
 <main style="width:100%" framexs:element="">
 <framexs:attribute name="class">
