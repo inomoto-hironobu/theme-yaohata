@@ -38,6 +38,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   gtag('js', new Date());
 
   gtag('config', '<framexs:property name="google-analytics-code"/>');
+  
 </script>
 </framexs:if>
 <meta charset="UTF-8"/>
@@ -68,15 +69,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </script>
 </framexs:if>
 
+<framexs:if property="use-default" value="true">
+<link rel="stylesheet" href="css/default.css"/>
+</framexs:if>
+
 <framexs:meta/>
 <framexs:link/>
 <framexs:script/>
 <framexs:property name="footer-in-head"/>
 </head>
-<body framexs:element="">
-<framexs:attribute name="class">
-<framexs:property name="body-class"/>
-</framexs:attribute>
+<body class="bg-light">
 <framexs:if property="google-tag-manager-code">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -87,8 +89,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <!-- End Google Tag Manager (noscript) -->
 </framexs:if>
 <header id="pagetop">
-<nav id="navbar" framexs:element="">
-  <framexs:attribute name="class">navbar navbar-expand-lg <framexs:property name="nav-class"/></framexs:attribute>
+<nav id="navbar" class="navbar navbar-expand-lg">
   <a class="navbar-brand"><framexs:property name="logo"/></a>
   <a class="navbar-brand" framexs:element="">
   <framexs:attribute name="href"><framexs:property name="home-url"/></framexs:attribute>
@@ -124,14 +125,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <div class="container">
 <framexs:if property="header-in-container" value="yes">
-<header class="row">
-<div framexs:element="">
-<framexs:attribute name="class">
-col
-<framexs:property name="header-in-container-class"/>
-</framexs:attribute>
+<header>
 <framexs:property name="header-in-container"/>
-</div>
 </header>
 </framexs:if>
 
@@ -139,11 +134,7 @@ col
 
 <!--PC用サイドバー1-->
 <framexs:if property="sidebar1" value="display">
-<aside id="sidebar1-wide" framexs:element="">
-<framexs:attribute name="class">
-d-none d-md-block
-<framexs:property name="sidebar1-wide-class"/>
-</framexs:attribute>
+<aside id="sidebar1-wide" class="d-none d-md-block col-md-4 bg-white">
 <framexs:resource name="sidebar1-wide"/>
 </aside>
 </framexs:if>
@@ -159,8 +150,7 @@ col d-md-none d-block
 </aside>
 </framexs:if>
 
-
-
+<!--メインパネル-->
 <div framexs:element="">
 <framexs:attribute name="class">
 center
@@ -177,13 +167,13 @@ col
 </nav>
 </framexs:if>
 <framexs:property name="header-in-center"/>
-<main style="width:100%" framexs:element="">
-<framexs:attribute name="class">
-<framexs:property name="main-class"/>
-</framexs:attribute>
+<main style="width:100%" class="bg-white">
 <framexs:property name="header-in-main"/>
+
 <h1 class="title"><framexs:title/></h1>
+
 <framexs:id name="main"/>
+
 <framexs:property name="footer-in-main"/>
 </main>
 <framexs:property name="footer-in-center"/>
@@ -213,19 +203,13 @@ col d-md-none d-block
 </div>
 <!-- /row -->
 
-<footer class="row">
-<div class="col" framexs:element="">
-<framexs:attribute name="class">col <framexs:property name="footer-class-in-container"/></framexs:attribute>
+<footer class="footer-in-container">
 <framexs:property name="footer-in-container"/>
-</div>
 </footer>
 
 </div>
 <!-- /container -->
-<footer id="footer" framexs:element="">
-<framexs:attribute name="class">
-<framexs:property name="footer-class"/>
-</framexs:attribute>
+<footer id="footer" class="bg-secondary text-white">
 
 <framexs:property name="footer"/>
 
