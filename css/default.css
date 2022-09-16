@@ -127,7 +127,7 @@ article img {
 }
 @media screen and (min-width:748px) {
 	article {
-		width:660px;
+		max-width:660px;
 		margin:auto;
 	}
 }
