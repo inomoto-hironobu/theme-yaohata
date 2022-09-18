@@ -1,4 +1,109 @@
+const ns = {
+	'xhtml' : 'http://www.w3.org/1999/xhtml',
+	'mathml': 'http://www.w3.org/1998/Math/MathML'
+};
+const nsResolver = function nsResolver(prefix) {
+	return ns[prefix] || null;
+};
+/**
+@param {string} link
+@param {Function} consumer
+description,modified,textLength
+*/
+function pullMeta(link, consumer, errorHandler) {
+	fetch(link,{
+		headers:{
+			ContentType:"application/xhtml+xml"
+		}
+	})
+	.then(res=>{
+		return res.text();
+	})
+	.then(d=>{
+		const parser = new DOMParser();
+  		const data = parser.parseFromString(d, "text/html");
+		console.log(data);
+		const info = {
+			document:data,
+			description:null,
+			modified:null,
+			contentLength:null,
+			title:null
+		};
+		info.title = data.evaluate('//xhtml:title/text()', data, nsResolver, XPathResult.STRING_TYPE , null).stringValue;
+		info.description = data.evaluate('//xhtml:meta[@name=\'description\']/@content', data, nsResolver, XPathResult.STRING_TYPE , null).stringValue;
+		info.modified = data.evaluate('//xhtml:meta[@name=\'modified\']/@content', data, nsResolver, XPathResult.STRING_TYPE , null).stringValue;
+		const texts = data.evaluate('//xhtml:article//text()', data, nsResolver, XPathResult.UNORDERED_NODE_ITERATOR_TYPE , null);
+		let content = '';
+		for(let v = texts.iterateNext(); v != null; v = texts.iterateNext()) {
+			content = content + v.nodeValue;
+		}
+		info.contentLength = content.length;
+		consumer(info);
+	})
+	.catch(error=>{
+		if(errorHandler){
+			errorHandler(error);
+		} else {
+			console.error(error);
+		}
+	});
+}
+const xpathFacade = function(node, ns) {
+	const nsResolver = function nsResolver(prefix) {
+	  return ns[prefix] || null;
+	};
+	const obj = {
+		iterate: function(xpath, init, method) {
+			result = node.evaluate(xpath, node, nsResolver, XPathResult.UNORDERED_NODE_ITERATOR_TYPE , null);
+			let r = init;
+			for(let v = result.iterateNext(); v != null; v = result.iterateNext()) {
+				r = method(v, r);
+			}
+			return r;
+		},
+		single: function(xpath) {
+			return node.evaluate(xpath, node, nsResolver, XPathResult.ANY_UNORDERED_NODE_TYPE , null).singleNodeValue;
+		},
+		string: function(xpath) {
+			return node.evaluate(xpath, node, nsResolver, XPathResult.STRING_TYPE , null).stringValue;
+		}
+	};
+	return obj;
+};
+
+class InternalLink extends HTMLElement {
+	constructor() {
+		super();
+		const path = this.getAttribute("path");
+		console.log(path);
+		if(path != null && new URL(path, document.location).host == document.location.host) {
+			console.log("yes");
+		}
+		const loading = document.getElementById('loading-template').content.firstElementChild.cloneNode(true);
+		
+		this.replaceWith(loading);
+		
+		pullMeta(path,function(info){
+			const template = document.getElementById('link-template').content.firstElementChild.cloneNode(true);
+			template.querySelector('.card-title').textContent=info.title;
+			template.querySelector('.card-text').textContent=info.description;
+			template.querySelector('.card-subtitle').textContent=info.modified+' 更新/'+info.contentLength+' 文字';
+			template.querySelector('a').setAttribute('href',path);
+			loading.replaceWith(template);
+		},function(error){
+			let loaderror = document.getElementById('loaderror-template').content.firstElementChild;
+			console.error(error);
+			loading.replaceWith(loaderror);
+		});
+	}
+}
+
+
 window.addEventListener('DOMContentLoaded', ()=>{
+
+	customElements.define("internal-link",InternalLink);
+
 	if(window.innerWidth > 750) {
 		document
 		.querySelectorAll('aside details')
@@ -37,27 +142,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			});
 			a.parentNode.insertBefore(a, a.nextSibling);
 		}		
-	});
-	
-	document
-	.querySelectorAll('*[data-internal-path]')
-	.forEach((link)=>{
-		let loading = document.getElementById('loading-template').querySelector('.spinner-border').cloneNode(true);
-		link.replaceWith(loading);
-		const internal_path = link.dataset.internalPath;
-		let card = document.getElementById('link-template').querySelector('.card').cloneNode(true);
-		console.log(internal_path);
-		pullMeta(internal_path,function(info){
-			
-			card.querySelector('.card-title').textContent=info.title;
-			card.querySelector('.card-text').textContent=info.description;
-			card.querySelector('.card-subtitle').textContent=info.modified+' 更新/'+info.contentLength+' 文字';
-			card.querySelector('a').setAttribute('href',internal_path);
-			loading.replaceWith(card);
-		},function(error){
-			let loaderror = document.getElementById('loaderror-template').firstElementChild;
-			loading.replaceWith(loaderror);
-		});
 	});
 	
 	/*data-source属性を持つ要素はソースコードを参照する者であるとして、
