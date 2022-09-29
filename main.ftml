@@ -18,12 +18,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <repository>https://github.com/inomoto-hironobu/yaohata.git</repository>
 </infomation>
 <head>
-<framexs:if property="framexs-theme">
-<script>
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({"theme":<framexs:property name="framexs-theme"/>});
-</script>
-</framexs:if>
 <framexs:if property="google-tag-manager-code">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -33,6 +27,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   })(window,document,'script','dataLayer','<framexs:property name="google-tag-manager-code"/>');</script>
 <!-- End Google Tag Manager -->
 </framexs:if>
+
 <framexs:if property="google-analytics-code">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" framexs:element="">
@@ -47,6 +42,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   
 </script>
 </framexs:if>
+
+<framexs:if-meta property="framexs-theme">
+<script>
+    dataLayer.push({"theme":<framexs:meta property="framexs-theme"/>});
+</script>
+</framexs:if-meta>
+
 <meta charset="UTF-8"/>
 <meta framexs:fix="" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
