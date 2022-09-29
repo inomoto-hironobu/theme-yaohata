@@ -18,6 +18,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <repository>https://github.com/inomoto-hironobu/yaohata.git</repository>
 </infomation>
 <head>
+<framexs:if property="framexs-theme">
+<script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({"theme":<framexs:property name="framexs-theme"/>});
+</script>
+</framexs:if>
 <framexs:if property="google-tag-manager-code">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -47,12 +53,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <title><framexs:title/> - <framexs:property name="site-name"/></title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="css/yaohata.css"/>
-<framexs:if property="use-default-css" value="yes">
-<link rel="stylesheet" href="css/default.css"/>
-</framexs:if>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-<script src="js/util.js"></script>
 <script src="js/yaohata.js"></script>
 
 <script src="js/jquery.js"></script>
