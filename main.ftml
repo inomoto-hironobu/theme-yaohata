@@ -142,7 +142,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <framexs:if property="sidebar1" value="display">
 <aside id="sidebar1-wide" class="d-none d-md-block col-md-4 bg-white">
 <framexs:resource name="sidebar1-wide"/>
-<framexs:property name="sidebar1"/>
+<framexs:property name="sidebar1-aside"/>
 </aside>
 </framexs:if>
 
