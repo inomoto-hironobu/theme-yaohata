@@ -45,7 +45,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <framexs:if-meta property="framexs-theme">
 <script>
-    dataLayer.push({"theme":<framexs:meta property="framexs-theme"/>});
+    dataLayer.push({"Framexs Theme":<framexs:meta property="framexs-theme"/>});
 </script>
 </framexs:if-meta>
 
@@ -128,9 +128,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div id="top" style="height:90px;z-index:-1;position:absolute"></div>
 
 <div class="container">
-<framexs:if property="header-in-container" value="yes">
-<header>
+<framexs:if property="header-in-container">
+<header class="row">
+<div class="col">
 <framexs:property name="header-in-container"/>
+</div>
 </header>
 </framexs:if>
 
@@ -140,6 +142,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <framexs:if property="sidebar1" value="display">
 <aside id="sidebar1-wide" class="d-none d-md-block col-md-4 bg-white">
 <framexs:resource name="sidebar1-wide"/>
+<framexs:property name="sidebar1"/>
 </aside>
 </framexs:if>
 
