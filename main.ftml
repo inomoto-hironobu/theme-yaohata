@@ -176,7 +176,7 @@ col
 <main style="width:100%" class="bg-white">
 <framexs:property name="header-in-main"/>
 
-<h1 class="title"><framexs:title/></h1>
+<framexs:if property="title" value="display"><h1 class="title"><framexs:title/></h1></framexs:if>
 
 <framexs:id name="main"/>
 
