@@ -43,9 +43,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </script>
 </framexs:if>
 
-<framexs:if-meta property="framexs-theme">
+<framexs:if-meta name="framexs-theme">
 <script>
-    dataLayer.push({"Framexs Theme":<framexs:meta property="framexs-theme"/>});
+    dataLayer.push({"event":"framexs","theme":"<framexs:meta name="framexs-theme"/>"});
 </script>
 </framexs:if-meta>
 
