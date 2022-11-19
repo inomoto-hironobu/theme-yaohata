@@ -133,22 +133,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <div class="row">
 
+
+<framexs:if property="sidebar" value="display">
 <!--PC用サイドバー1-->
-<framexs:if property="sidebar1" value="display">
-<aside id="sidebar1-wide" class="d-none d-md-block col-md-4 bg-white">
-<framexs:resource name="sidebar1-wide"/>
-<framexs:property name="sidebar1-aside"/>
+<aside id="sidebar-wide" class="d-none d-md-block col-md-4 bg-white">
+<framexs:resource name="sidebar-wide"/>
+<framexs:property name="sidebar-wide"/>
 </aside>
-</framexs:if>
+
 
 <!--モバイル用サイドバー1-->
-<framexs:if property="sidebar1" value="display">
-<aside id="sidebar1-mobile" framexs:element="">
-<framexs:attribute name="class">
-col d-md-none d-block
-<framexs:property name="sidebar1-mobile-class"/>
-</framexs:attribute>
-<framexs:resource name="sidebar1-mobile"/>
+<aside id="sidebar-mobile" class="col d-md-none d-block">
+<framexs:resource name="sidebar-mobile"/>
+<framexs:property name="sidebar-wide"/>
 </aside>
 </framexs:if>
 
