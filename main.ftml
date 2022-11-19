@@ -8,15 +8,6 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xmlns:yc="urn:yaohata-components" lang="ja">
-<infomation xmlns="urn:framexs">
-<name>八百幡</name>
-<version>0.2.0</version>
-<author>井本拓伸</author>
-<license>MIT License</license>
-<summary>テーマをどう作ればいいかの参照として開発されたテーマ</summary>
-<description></description>
-<repository>https://github.com/inomoto-hironobu/yaohata.git</repository>
-</infomation>
 <head>
 <framexs:if property="google-tag-manager-code">
 <!-- Google Tag Manager -->
@@ -165,9 +156,14 @@ col d-md-none d-block
 <div framexs:element="">
 <framexs:attribute name="class">
 center
-<framexs:property name="center-class">
+<framexs:switch property="sidebar">
+<framexs:case value="display">
+col-md-8
+</framexs:case>
+<framexs:case value="">
 col
-</framexs:property>
+</framexs:case>
+</framexs:switch>
 </framexs:attribute>
 <framexs:if id="breadcrumb">
 <nav aria-label="breadcrumb">
@@ -189,28 +185,6 @@ col
 </main>
 <framexs:property name="footer-in-center"/>
 </div>
-
-<!--PC用サイドバー2-->
-<framexs:if property="sidebar2" value="display">
-<aside id="sidebar2-wide" framexs:element="">
-<framexs:attribute name="class">
-d-none d-md-block
-<framexs:property name="sidebar2-wide-class"/>
-</framexs:attribute>
-<framexs:resource name="sidebar2-wide"/>
-</aside>
-</framexs:if>
-
-<!--モバイル用サイドバー2-->
-<framexs:if property="sidebar2" value="display">
-<aside id="sidebar2-mobile" framexs:element="">
-<framexs:attribute name="class">
-col d-md-none d-block
-<framexs:property name="sidebar2-mobile-class"/>
-</framexs:attribute>
-<framexs:resource name="sidebar2-mobile"/>
-</aside>
-</framexs:if>
 </div>
 <!-- /row -->
 

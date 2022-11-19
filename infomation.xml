@@ -1,0 +1,9 @@
+<infomation xmlns="urn:framexs-theme">
+<name>八百幡</name>
+<version>0.2.0</version>
+<author>井本拓伸</author>
+<license>MIT License</license>
+<summary>テーマをどう作ればいいかの参照として開発されたテーマ</summary>
+<description></description>
+<repository>https://github.com/inomoto-hironobu/theme-yaohata.git</repository>
+</infomation>
