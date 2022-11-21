@@ -133,7 +133,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <div class="row">
 
-<<<<<<< HEAD
 
 <framexs:if property="sidebar" value="display">
 <!--PC用サイドバー1-->
@@ -147,13 +146,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <aside id="sidebar-mobile" class="col d-md-none d-block">
 <framexs:resource name="sidebar-mobile"/>
 <framexs:property name="sidebar-wide"/>
-=======
-<framexs:if property="sidebar" value="display">
-<!--PC用サイドバー-->
-<aside id="sidebar-wide" class="col-12 col-md-4 bg-white">
-<framexs:resource name="sidebar-wide"/>
-<framexs:property name="sidebar-wide"/>
->>>>>>> main
 </aside>
 </framexs:if>
 
