@@ -142,22 +142,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <div class="row">
 
-<!--PC用サイドバー1-->
-<framexs:if property="sidebar1" value="display">
-<aside id="sidebar1-wide" class="d-none d-md-block col-md-4 bg-white">
-<framexs:resource name="sidebar1-wide"/>
-<framexs:property name="sidebar1-aside"/>
-</aside>
-</framexs:if>
-
-<!--モバイル用サイドバー1-->
-<framexs:if property="sidebar1" value="display">
-<aside id="sidebar1-mobile" framexs:element="">
-<framexs:attribute name="class">
-col d-md-none d-block
-<framexs:property name="sidebar1-mobile-class"/>
-</framexs:attribute>
-<framexs:resource name="sidebar1-mobile"/>
+<framexs:if property="sidebar" value="display">
+<!--PC用サイドバー-->
+<aside id="sidebar-wide" class="col-12 col-md-4 bg-white">
+<framexs:resource name="sidebar-wide"/>
+<framexs:property name="sidebar-wide"/>
 </aside>
 </framexs:if>
 
@@ -215,7 +204,7 @@ col d-md-none d-block
 <!-- /row -->
 
 <footer class="footer-in-container">
-<framexs:property name="footer-in-container"/>
+<div style="font-size:1.5rem;text-align:center"><a style="color:black" href="#top">▲</a></div>
 </footer>
 
 </div>
