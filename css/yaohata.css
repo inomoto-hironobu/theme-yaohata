@@ -7,67 +7,16 @@ body {
 	padding:0;
 	margin:0;
 }
-.title {
-    font-weight: bold;
-    margin-top: 0%;
-    margin-left: 1rem;
-    text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff, 2px 0px 2px #fff, 0px 2px 2px #fff, -2px 0px 2px #fff, 0px -2px 2px #fff;
-    line-height: 120%;
-	font-size:180%;
-	color:black;
-	padding-left: 10px;
-	border-left: solid 8px gray;
-	border-bottom: solid 3px gray;
-	padding-bottom: 8px;
-}
-
-
-
-.prelude {
-	padding: .5rem .5rem 0 .5rem;
-	text-shadow: 1px 1px 2px pink;
-	font-size: 1.25rem;
-	background:linear-gradient(#fff, RGBA(0,0,255,0.05));
-	line-height:180%;                
-	border:solid 2px #77F;
-	text-shadow    : 
-       -1px  -1px 0px #fff,
-       1px  -1px 0px #fff,
-       -1px  1px 0px #fff,
-       1px  1px 0px #fff;
-}
 
 aside details {
 	margin: 0.5rem 0;
 }
-.adv {
-	margin: 0 auto;
-}               
-.adv > * {                          
-	margin: .5rem auto;
-}
-ul.sharebuttons > li {
-	display: inline-block;
-}
-ul.sharebuttons div {
-	display: inline;
-}
+
 
 figure > * {
 	width:100%;
 }
-.article-list p {
-	margin: 0;
-}
-table.responsive {
-	border-collapse: collapse;
-	border:1px solid #333;
-}
-table.responsive td, table.responsive th {
-	border-collapse: collapse;
-	border:1px solid #333;
-	padding: .25rem;
-}
+
 #footer-links a {
 	color:white;
 }
@@ -81,25 +30,8 @@ body > footer {
 
 @media screen and (max-width:767px) {
 
-	/*タイトルの調整*/
-	.title {
-	background-color: #AAA;
-	line-height: 2.0;
-	border-top: solid 8px #BBB;
-	box-shadow: 0 6px 0px gray;
-	margin-left: 0;
-	margin-right: 0;
-	border-left-width: 0;
-	border-right-width: 0;
-	}
 	body > footer {
 		padding: 10px 25px 25px;
-	}
-	.footer-table {
-		width:100%;margin:auto
-	}
-	.code-container code {
-		margin: 0;
 	}
 }
 
@@ -109,7 +41,10 @@ body > footer {
 	opacity: 1;
 }
 
-
+#pagetop > nav{
+	background:linear-gradient(#F7F9FE,#CACACA);
+	box-shadow: 1px 1px 10px #778;
+}
 /*25.スペースの変更*/
 #side-infomation p {
 	/*アイドメニューの幅を広げる*/
@@ -128,51 +63,12 @@ body > footer {
     font-weight: 900;
 }
 
-.tips {
-	list-style: none;
-	font-size:80%;
-	font-weight: 900;
-	color: #633;
-	margin-left:-54px;
-}
-.tips:before {
-  list-style: none;
-    content: "※　";
-}
-
-article .contact-button {
-	background: RGBA(255,255,255,0.02);
-    margin: 1rem auto;
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
-	color: #396;
-	display:block;
-	padding: 10px 0;
-	margin: 1rem 10%;
-    width: 80%;
-    background: linear-gradient(#efe, #beb);
-    color: #396;
-    font-weight: bold;
-    font-size: 180%;
-    border: solid 5px #396;
-    border-radius: 10px;
-    text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
-    box-shadow: 2px 2px 4px #9a9;
-
-}
-
 
 main ul ul {
     margin-bottom: 0px;
     border: dotted #1e366a 0px;
     padding-top: 0;
     padding-bottom: 0;
-}
-
-.dropdown-item{
-  /*メニューの幅にも対応*/
-  line-height: 1.5;
 }
 
 /*19.プライバシーポリシーの修正*/
@@ -187,56 +83,6 @@ main ul ul {
     top: 0;
     }
 
-.info {
-margin-top:5px;
-}
-.info p {
-padding:5px 15px;
-}
-
-
-
-.info h1,.info h2,.info h3,.info h4,.info h5,.info h6 {
-    color: #FFF;
-    line-height: 80px;
-    text-align: center;
-	background: #6a6a6a;
-}
-.info {
-	/*見出しボックス内の色を変更*/
-	border: solid 1px #5a5a5a;
-	color:#444;
-	background: linear-gradient(#FFF, #EFEFEF);
-	/*見出しの文字を普通の文字に*/
-	font-weight: normal;
-	font-size: 100%;
-	overflow: hidden;
-    font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #9a9;
-    margin-bottom: 80px;
-	padding-bottom: 0;
-}
-
-.info > p {
-	line-height: 1.5;
-	margin:10px;
-    text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
-    margin: 20px 20px 20px 10px;
-	border-width: 0;
-}
-
-.info h3 {
-/*見出しの文字を変更*/
-font-size: 130%;
-line-height: 55px;
-}
-
-/*外部リンクの見た目を調整*/
-.info ul {
-margin:25px;
-padding: 10px 40px;
-}
 main > section,
 article > section {
 	border: dotted 0 gray;
@@ -284,9 +130,10 @@ main figure {
 main figcaption {
 	text-align: center;
 }
+/*50.コードボックスの見栄えの修正*/
 main pre {
-	border: ridge 4px lightcoral;
-	border-radius: 1rem;
+	border: ridge 2px #888;
+	border-radius: 0.5rem;
 	background-color: white;
 }
 main details {
@@ -321,30 +168,7 @@ main dl {
 article img {
     width:100%;
 }
-table.vertical {
-	display: block;
-}
-table.vertical tbody {
-	display: block;
-}
-table.vertical tr {
-	display: block;
-	background-color: white;
-	border: dotted 1px gray;
-	border-radius: .5rem;
-	margin: .5rem 0;
-	padding: .5rem;
-	box-shadow: 1px 1px 0px gray
-}
-table.vertical th,table.vertical td {
-	display: block;
-}
-table.vertical thead {
-	display:block;
-}
-table.vertical tfoot {
-	display:block;
-}
+
 kbd{
     background-color: #7394b7;
 }
@@ -354,13 +178,7 @@ kbd{
 	--breakpoint-width: 748px;
 }
 
-img.right {
-	float:right;
-}
-img.left {
-	float:left;
-	margin-right:1rem;
-}
+
 article img {
 	shape-outside: margin-box;
 }
@@ -422,10 +240,7 @@ main h3 {
 	padding-left: 5px;
 	padding-bottom:10px;
 }
-/*30.ヘッダーの文字が薄い*/
-.navbar-nav li a.nav-link{
-	color:#111;
-}
+
 
 main {
 	padding-top:20px;
@@ -435,4 +250,17 @@ main {
 }
 a.navbar-brand {
 	color:black;
+}
+main figure {
+    border: dotted 1px silver;
+}
+@media screen and (min-width: 748px){
+	article {
+		max-width: 660px;
+		margin: auto;
+	}
+}
+/*文字間隔を広げる*/
+body > footer  tr{
+	line-height: 40px;
 }
