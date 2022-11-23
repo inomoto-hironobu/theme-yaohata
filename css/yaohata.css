@@ -264,3 +264,7 @@ main figure {
 body > footer  tr{
 	line-height: 40px;
 }
+/*30.ヘッダーの文字が薄い*/
+.navbar-nav li a.nav-link{
+	color:#111;
+}
