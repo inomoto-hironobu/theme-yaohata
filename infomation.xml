@@ -6,4 +6,8 @@
 <summary>テーマをどう作ればいいかの参照として開発されたテーマ</summary>
 <description></description>
 <repository>https://github.com/inomoto-hironobu/theme-yaohata.git</repository>
+<resources>
+<resource name="sidebar-wide"/>
+<resource name="sidebar-mobile"/>
+</resources>
 </infomation>
