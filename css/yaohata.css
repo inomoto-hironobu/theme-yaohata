@@ -93,20 +93,6 @@ article > section {
 	padding-top: 0.4rem;
 	border-radius: 5px;
 }
-article > p,
-section > p {
-	border: dashed 1px lightcyan;
-	background-color: white;
-	margin: 1.25rem 0;
-	padding: 1.25rem;
-	/*本文の幅を広げる*/
-	line-height: 1.5;
-	/*文字ボックスの色を調整*/
-	border-top: solid 1px #121212;
-	border-left: solid 1px #121212;
-	border-right: solid 2px #727272;
-	border-bottom: solid 2px #727272;
-}
 
 section ul,section ol {
   color: #1e366a;
@@ -136,17 +122,7 @@ main pre {
 	border-radius: 0.5rem;
 	background-color: white;
 }
-main details {
-	box-shadow: 1px 1px 2px gray;
-	margin: .75rem .25rem;
-	padding: .5rem;
-	border: solid 1px orange;
-	background-color: white;
-	margin: 0px 26px 10px;
-}
-main details > summary {
-	cursor: pointer;
-}
+
 main dl > dd {
 	background-color: white;
 	padding: .5rem;
